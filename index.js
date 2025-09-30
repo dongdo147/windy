@@ -2,11 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
-app.use(express.static('public'));
+// Nếu chỉ chạy serverless function trên Vercel, index.js có thể rất đơn giản
+// Hoặc có thể để trống, tùy project. 
 
-// Trả config (ví dụ API key) cho client
-app.get('/config', (req, res) => {
-    res.json({ windyKey: process.env.KEY });
-});
-
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+module.exports = app;
