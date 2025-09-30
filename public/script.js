@@ -1,4 +1,4 @@
-fetch('/config')
+fetch('/api/config')
     .then(res => res.json())
     .then(config => {
         const options = {
@@ -9,7 +9,6 @@ fetch('/config')
             zoom: 5,
         };
 
-        // Initialize Windy API **chỉ ở đây**
         windyInit(options, windyAPI => {
             const { map } = windyAPI;
 
